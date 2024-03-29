@@ -1,0 +1,96 @@
+/* Register.css */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Container styles */
+.registration-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f1f1f1; /* Light gray background */
+}
+
+/* Title styles */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styles */
+label {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+/* Input styles */
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  width: 90%;
+  border-radius: 10px;
+}
+input::placeholder{
+  color: black;
+  padding-left: 2rem;
+  
+}
+/* Button styles */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+/* Back button styles */
+.back{
+  padding: 0.5rem 1rem;
+
+  margin: 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: rgb(11, 116, 120);
+  color: #fff;
+  cursor: pointer;
+}
+.input_container{
+  position: relative;
+
+}
+.icon{
+
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  
+}
