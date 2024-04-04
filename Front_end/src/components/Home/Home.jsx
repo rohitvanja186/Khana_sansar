@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import home from '../../img/home.png'; // Import the image
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -22,9 +23,11 @@ const Home = () => {
           Join the movement of compassionate hearts<br />
         </p>
 
-        <a href="/login">
-          <button className="btn">Donate Now</button>
-        </a>
+       <Link to="/donate">
+       <button className="btn">Donate Now</button>
+       </Link>
+         
+       
       </div>
     </div>
   );

@@ -34,12 +34,14 @@ sequelize
   
 
 db.users= require('./userModel.js')(sequelize, DataTypes);
+db.donations= require('./donationModel.js')(sequelize, DataTypes);
 
     
-
+db.users.hasMany(db.donations)  //one user can do many donation
+    db.donations.belongsTo(db.users)
    
 
-db.sequelize.sync({ force: false }).then(() =>{
+db.sequelize.sync({ force: false}).then(() =>{
     console.log("yes re-sync done")
 })
 

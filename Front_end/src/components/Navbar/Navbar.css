@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-  background-color: #333;
+  background-color: #555;
   padding: 0rem 2rem;
   margin: 0;
   display: flex;
@@ -24,12 +24,14 @@ ul {
   padding: 0;
   display: flex;
   align-items: center;
+  gap: 3rem;
 
 }
 
 li {
   margin-right: 20px;
   text-align: right;
+
 }
 
 a {
@@ -40,8 +42,7 @@ a {
 }
 
 a:hover {
-  color: #ffc107;
-  /* Change the color on hover as desired */
+  color: #ffc107; /* Change the color on hover as desired */
 }
 
 .join-btn {

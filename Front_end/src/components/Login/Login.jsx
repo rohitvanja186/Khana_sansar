@@ -4,32 +4,47 @@ import './Login.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import pic from '../../img/register.png'
+import Cookies from 'js-cookie';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigateTo = useNavigate();
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!email || !password){
-      toast.error('Please enter the email address or password')
-      }
-  
+    
+    // Check if email or password is empty
+    if (!email || !password) {
+      toast.error('Please enter the email address and password');
+      return;
+    }
+
     try {
       const response = await axios.post('http://localhost:3000/login', {
         email,
         password
-      })
-  
-      if (response && response.data.includes("Email not found")) {
-        toast.error('Email not found');
-      } else if (response && response.data.includes("Password does not match")) {
-        toast.error('Password does not match');
+      });
+
+      if (response.data.token) {
+        console.log("Login successful");
+        const { token } = response.data;
+        Cookies.set('token', token);
+        navigateTo('/main');
+        setTimeout(() => {
+          toast.success('Login Success', {
+            position: "top-center"
+          });
+        }, 200);
       } else {
-        toast.success('Login successful');
-        navigateTo('/main')
+        // Handle error messages
+        if (response.data.includes("Email not found")) {
+          toast.error('Email not found');
+        } else if (response.data.includes("Password does not match")) {
+          toast.error('Password does not match');
+        } else {
+          toast.error('An error occurred. Please try again.');
+        }
       }
     } catch (error) {
       toast.error('An error occurred. Please try again.');

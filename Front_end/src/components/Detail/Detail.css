@@ -1,0 +1,54 @@
+/* Detail.css */
+
+/* Style for the container */
+.detail-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Style for detail items */
+  .detail-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Style for buttons container */
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Style for edit button */
+  .edit-btn {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 30px;
+    margin: 10px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+  }
+  
+  .edit-btn:hover {
+    background-color: #45a049; /* Darker green background on hover */
+  }
+  
+  /* Style for delete button */
+  .delete-btn {
+    background-color: #e32121; /* Red background */
+    color: white; /* White text */
+    padding: 10px 30px;
+    margin: 10px 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+  }
+  
+  .delete-btn:hover {
+    background-color: #731c1c; /* Darker red background on hover */
+  }

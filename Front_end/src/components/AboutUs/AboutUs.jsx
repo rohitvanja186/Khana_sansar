@@ -2,10 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './AboutUs.css';
 import abtImage from '../../img/abt.jpg'; // Import the image
+import Navbar from '../Navbar/Navbar';
 
 function AboutUs() {
   return (
-    <div className='heading'>
+
+    <>
+<Navbar />
+
+<div className='heading'>
       <h1>About us</h1>
       <p>Our mission is to fight hunger by redistributing surplus food to those in need.</p>
 
@@ -22,6 +27,9 @@ function AboutUs() {
         </div>
       </section>
     </div>
+    </>
+    
+    
   );
 }
 

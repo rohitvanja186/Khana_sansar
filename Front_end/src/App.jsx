@@ -8,6 +8,10 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Main from './components/Main/Main';
 import AboutUs from './components/AboutUs/AboutUs';
+import Donateform from './components/Donateform/Donateform';
+import Services from './components/Services/Services';
+import Detail from './components/Detail/Detail';
+import Editdetail from './components/Editdetail/Editdetail';
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/main" element={<Main />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/donate" element={<Donateform />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/edit" element={<Editdetail />} />
         </Routes>
       </div>
     </Router>

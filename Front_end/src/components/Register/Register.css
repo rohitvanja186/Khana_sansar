@@ -8,7 +8,7 @@ body {
 
 /* Container styles */
 .registration-container {
-  max-width: 400px;
+  width: 400px;
   /* margin: auto; */
   padding: 2rem;
   border-radius: 10px;
@@ -46,8 +46,8 @@ label {
 
 /* Button styles */
 .signUp-btn {
-  padding: 10px 60px;
-  background: #333; /* Green color */
+  padding: 10px 40px;
+  background: #333;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -58,7 +58,7 @@ label {
 }
 
 .signUp-btn:hover {
-  background-color: #534d4d; /* Darker green color on hover */
+  background-color: #534d4d;
 }
 
 /* Back button styles */
@@ -78,7 +78,7 @@ label {
 }
 
 .login-btn{
-  padding: 10px 60px;
+  padding: 10px 40px;
   background: #aca9a9; /* Green color */
   color: #333;
   border: none;
@@ -113,3 +113,7 @@ input{
   gap: 1rem;
 }
 
+.input-container input{
+
+  width: 100px;
+}
