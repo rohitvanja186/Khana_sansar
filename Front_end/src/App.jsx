@@ -7,6 +7,7 @@ import Login from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Main from './components/Main/Main';
+import AboutUs from './components/AboutUs/AboutUs';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/main" element={<Main />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </div>
     </Router>

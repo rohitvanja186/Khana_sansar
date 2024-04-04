@@ -1,44 +1,60 @@
 /* Navbar.css */
-body{
-    padding: 0;
-    margin: 0;
+body {
+  padding: 0;
+  margin: 0;
 }
-nav {
-    background-color: #333;
-    padding: 0rem 2rem;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 
-  .logo {
-    width: 120px;
-	  height: auto;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    
-  }
-  
-  li {
-    margin-right: 20px;
-    text-align: right;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  a:hover {
-    color: #ffc107; /* Change the color on hover as desired */
-  }
-  
+nav {
+  background-color: #333;
+  padding: 0rem 2rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+li {
+  margin-right: 20px;
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+a:hover {
+  color: #ffc107;
+  /* Change the color on hover as desired */
+}
+
+.join-btn {
+  padding: 0.5rem 1rem;
+  margin: 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: #e32121;
+  color: #fff;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background-color: #731c1c;
+}

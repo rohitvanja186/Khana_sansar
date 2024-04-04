@@ -7,26 +7,25 @@ const Home = () => {
     <div className="homeback">
       <img src={home} alt="Home Image" className='home_img' /> {/* Use the imported image */}
 
-      <div>
-      <h1>
-        Nourishing Communities,<br />
-        One Donation at a Time.
-      </h1>
+      <div className='message'> {/* Corrected the classname attribute */}
+        <h1>
+          Nourishing Communities,<br />
+          One Donation at a Time.
+        </h1>
 
-      <p style={{ color: 'green' }}>
-        Your surplus becomes someone's sustenance.<br />
-        Together, we can end hunger and waste.
-      </p>
+        <p style={{ color: 'green', marginLeft: '15rem' }}>
+          Your surplus becomes someone's sustenance.<br />
+          Together, we can end hunger and waste.
+        </p>
 
-      <p style={{ paddingTop: '4%' }}>
-        Join the movement of compassionate hearts<br />
-      </p>
+        <p>
+          Join the movement of compassionate hearts<br />
+        </p>
 
-      <a href="/login">
-        <button className="btn">Donate Now</button>
-      </a>
+        <a href="/login">
+          <button className="btn">Donate Now</button>
+        </a>
       </div>
-     
     </div>
   );
 }
