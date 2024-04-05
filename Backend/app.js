@@ -63,9 +63,9 @@ res.status(500).send('Internal Server Error');
 }
 });
 
-// Donation route (example)
+// Donation route 
 app.post('/donate', async (req, res) => {
-// Example route, implement donation logic here
+
 
 const token =  req.headers.authorization?.split(' ')[1]; //if header ma suthorization aaeraxa vaney tya vako content lai split gardey ani tya bata 1 index ko lai lee vanya ho which means token ho 
 //  0 aneko Bearer ho
@@ -92,12 +92,15 @@ foodQuantity : foodQuantity,
 description : description,
 userID : userssss.ID
 })
-
-
-
-
-// Logic to handle donation data
 });
+
+ app.get('/getDonationData', async(req,res)=>{
+    
+    const getData = await donations.findAll();
+    console.log(getData);
+    res.send(getData);
+
+ })
 
 // Server listening
 
