@@ -7,6 +7,7 @@ const { register } = require('./Controller/authController');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const { where } = require('sequelize');
 
 // Import environmental variables if required
 require('dotenv').config();
@@ -101,6 +102,37 @@ userID : userssss.ID
     res.send(getData);
 
  })
+
+
+
+ app.get('/detail/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+
+        const getData = await donations.findAll({
+            where: {
+                ID: id
+            }
+        });
+
+        // console.log(getData);
+        res.send(getData);
+    } catch (error) {
+        console.error("Error occurred:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 // Server listening
 

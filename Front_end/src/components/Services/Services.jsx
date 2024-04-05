@@ -45,7 +45,7 @@ const Services = () => {
                             <td>{donation.foodType}</td>
                             <td>{donation.foodQuantity}</td>
                             <td>
-                                <Link to="/detail">
+                                <Link to={`/detail/${donation.ID}`}>
                                     <button className='view-btn'>View</button>
                                 </Link>
                             </td>
