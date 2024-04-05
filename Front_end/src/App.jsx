@@ -12,6 +12,7 @@ import Donateform from './components/Donateform/Donateform';
 import Services from './components/Services/Services';
 import Detail from './components/Detail/Detail';
 import Editdetail from './components/Editdetail/Editdetail';
+import Contactus from './components/Contactus/Contactus';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="/edit" element={<Editdetail />} />
+          <Route path="/contact" element={<Contactus />} />
         </Routes>
       </div>
     </Router>

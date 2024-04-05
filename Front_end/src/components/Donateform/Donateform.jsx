@@ -201,7 +201,7 @@ const Donateform = () => {
                   <option value="">Select Type</option>
                   <option value="vegetarian">Vegetarian</option>
                   <option value="non-vegetarian">Non-Vegetarian</option>
-                  <option value="both">Both</option>
+                  <option value="both">Both Veg and non-veg</option>
                 </select>
               </div>
             </div>

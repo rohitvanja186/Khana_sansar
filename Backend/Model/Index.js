@@ -42,7 +42,7 @@ db.users.hasMany(db.donations)  //one user can do many donation
    
 
 db.sequelize.sync({ force: false}).then(() =>{
-    console.log("yes re-sync done")
+    console.log("Database connection done successfully")
 })
 
 module.exports = db;
