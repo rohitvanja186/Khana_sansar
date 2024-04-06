@@ -207,7 +207,9 @@ app.post('/edit/:id', async (req, res) => {
 
 
 
-app.get('/detail',async (req,res)=>{
+app.get('/detailed/:id',async (req,res)=>{
+
+  const id = req.params.id;
 
 try {
     const token = req.headers.authorization?.split(' ')[1];
@@ -222,7 +224,8 @@ try {
 
     const data = await donations.findAll({
         where :{
-            userID : gettingDecryptedToken.id
+            userID : gettingDecryptedToken.id,
+            ID : id
         }
     })
  if(data.length > 0){

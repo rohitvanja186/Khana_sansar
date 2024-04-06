@@ -28,7 +28,7 @@ const Detail = () => {
   useEffect(() => {
     const showBtnData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/detail', {
+        const response = await axios.get(`http://localhost:3000/detailed/${id}`, {
           headers: {
             Authorization: `Bearer ${userId}` // Corrected syntax to concatenate 'Bearer' string with userId
           }
@@ -42,7 +42,7 @@ const Detail = () => {
       }
     };
     showBtnData();
-  }, [userId]);
+  }, [userId,id]);
 
   const handleDelete = async () => {
     try {

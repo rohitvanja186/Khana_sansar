@@ -13,13 +13,14 @@ import Services from './components/Services/Services';
 import Detail from './components/Detail/Detail';
 import Editdetail from './components/Editdetail/Editdetail';
 import Contactus from './components/Contactus/Contactus';
+import Introduction from './components/Introduction/Introduction';
 
 const App = () => {
   return (
     <Router>
       <div>
         <Routes>
-          <Route path='/' element={<><Navbar /><Home /></>} />
+          <Route path='/' element={<><Navbar /><Introduction /></>} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/main" element={<Main />} />
