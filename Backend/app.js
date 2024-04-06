@@ -147,6 +147,94 @@ app.delete('/delete/:id',async (req,res)=>{
 })
 
 
+app.get('/editrender/:id', async (req,res)=>{
+
+    const id = req.params.id
+    console.log(id)
+
+    const getData = await donations.findAll({
+        where :{
+            ID : id
+        }
+    })
+  res.send(getData)
+
+
+
+})
+
+app.post('/edit/:id', async (req, res) => {
+    const id = req.params.id;
+    const {
+      editDonorName,
+      editFoodName,
+      editDescription,
+      editFoodQuantity,
+      editFoodType,
+      editLocation,
+      editPhoneNumber
+    } = req.body;
+  
+    try {
+      const edit = await donations.update(
+        {
+          donorName: editDonorName,
+          phoneNumber: editPhoneNumber,
+          foodName: editFoodName,
+          foodType: editFoodType,
+          location: editLocation,
+          foodQuantity: editFoodQuantity,
+          description: editDescription,
+        
+        },
+        {
+          where: {
+            ID: id
+          }
+        }
+      );
+  
+      console.log('Update successful');
+      res.status(200).send('Update successful');
+    } catch (error) {
+      console.error('Error updating data:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
+
+
+
+
+
+app.get('/detail',async (req,res)=>{
+
+try {
+    const token = req.headers.authorization?.split(' ')[1];
+  
+    if (!token) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const gettingDecryptedToken = jwt.verify(token, process.env.SECRETKEY);
+    console.log("token", gettingDecryptedToken);
+
+
+    const data = await donations.findAll({
+        where :{
+            userID : gettingDecryptedToken.id
+        }
+    })
+ if(data.length > 0){
+    res.json("show btn")
+ }
+
+} catch (error) {
+    console.log(error)
+}
+
+  })
+
 
 
 

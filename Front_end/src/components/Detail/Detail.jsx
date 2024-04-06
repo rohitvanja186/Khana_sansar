@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Detail.css';
 import Navbar2 from '../Navbar2/Navbar2';
-import { Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
+import Cookies from 'js-cookie';
 
 const Detail = () => {
   const { id } = useParams();
   const [result, setResult] = useState(null);
   const navigateTo = useNavigate();
-  const userid = Cookies.get('token');
-
+  const userId = Cookies.get('token');
+  const [showBtn, setShowBtn] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -26,29 +25,43 @@ const Detail = () => {
     getData();
   }, [id]);
 
-  
+  useEffect(() => {
+    const showBtnData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/detail', {
+          headers: {
+            Authorization: `Bearer ${userId}` // Corrected syntax to concatenate 'Bearer' string with userId
+          }
+        });
 
+        if (response.data === "show btn") {
+          setShowBtn(true);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    showBtnData();
+  }, [userId]);
 
   const handleDelete = async () => {
     try {
       const deleted = await axios.delete(`http://localhost:3000/delete/${id}`);
 
-      if (deleted && deleted.data === 'success delete') {
+      if (deleted.data === 'success delete') {
         navigateTo('/services');
         setTimeout(() => {
           toast.success('Your post has been deleted successfully');
         }, 200);
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error deleting data:', error);
     }
   };
 
-
-
-
-
-  const redirectto = navigateTo(`/edit/${result[0].ID}`)
+  const handleEdit = () => {
+    navigateTo(`/edit/${result[0].ID}`);
+  };
 
   return (
     <>
@@ -75,16 +88,16 @@ const Detail = () => {
             <div className="detail-item">
               <strong>Description:</strong> {result[0].description}
             </div>
-           
+            {showBtn && (
               <div className="btn-container">
-               
-                  <button className="edit-btn" onClick ={redirectto}>Edit</button>
-              
+                <button className="edit-btn" onClick={handleEdit}>
+                  Edit
+                </button>
                 <button className="delete-btn" onClick={handleDelete}>
                   Delete
                 </button>
               </div>
-          
+            )}
           </div>
         )}
       </div>
@@ -93,5 +106,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-
