@@ -66,39 +66,42 @@ res.status(500).send('Internal Server Error');
 
 // Donation route 
 app.post('/donate', async (req, res) => {
-
-
-const token =  req.headers.authorization?.split(' ')[1]; //if header ma suthorization aaeraxa vaney tya vako content lai split gardey ani tya bata 1 index ko lai lee vanya ho which means token ho 
-//  0 aneko Bearer ho
-//1 vaneko token ho i mean userID which we are sending from donate.jsx 
-// console.log("token" ,token)
-
-const gettingDecryptedToken = jwt.verify(token, process.env.SECRETKEY)
-console.log("token",gettingDecryptedToken)
-const { donorName, phoneNumber, foodName, foodType, location, description,foodQuantity } = req.body;
-
-
-
-const userssss = await users.findByPk(gettingDecryptedToken.id)
-// console.log(userssss)
-
-
-const addDonate = await donations.create({
-donorName : donorName,
-phoneNumber : phoneNumber,
-foodName :foodName,
-foodType :foodType,
-location : location,
-foodQuantity : foodQuantity,
-description : description,
-userID : userssss.ID
-})
-});
-
+    try {
+      const token = req.headers.authorization?.split(' ')[1];
+  
+      if (!token) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+  
+      const gettingDecryptedToken = jwt.verify(token, process.env.SECRETKEY);
+      console.log("token", gettingDecryptedToken);
+  
+      const { donorName, phoneNumber, foodName, foodType, location, description, foodQuantity } = req.body;
+  
+      const userssss = await users.findByPk(gettingDecryptedToken.id);
+  
+      const addDonate = await donations.create({
+        donorName: donorName,
+        phoneNumber: phoneNumber,
+        foodName: foodName,
+        foodType: foodType,
+        location: location,
+        foodQuantity: foodQuantity,
+        description: description,
+        userID: userssss.ID
+      });
+  
+      res.status(200).json({ message: "Donation added successfully" });
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+  
  app.get('/getDonationData', async(req,res)=>{
     
     const getData = await donations.findAll();
-    console.log(getData);
+    // console.log(getData);
     res.send(getData);
 
  })
@@ -108,15 +111,17 @@ userID : userssss.ID
  app.get('/detail/:id', async (req, res) => {
     try {
         const id = req.params.id;
+      
 
         const getData = await donations.findAll({
             where: {
                 ID: id
             }
         });
-
         // console.log(getData);
         res.send(getData);
+
+       
     } catch (error) {
         console.error("Error occurred:", error);
         res.status(500).send("Internal Server Error");
@@ -124,6 +129,22 @@ userID : userssss.ID
 });
 
 
+
+  
+  
+app.delete('/delete/:id',async (req,res)=>{
+
+    const id = req.params.id
+
+
+    const deleteRequest = await donations.destroy({
+        where :{
+            ID : id
+        }
+    })
+    res.send('success delete')
+
+})
 
 
 

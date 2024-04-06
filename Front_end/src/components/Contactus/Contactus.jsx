@@ -9,7 +9,7 @@ const Contactus = () => {
 
             <div className='fix2 contacts'>
                 <form>
-                    <div className=' grid grid-two-column'>
+                    <div className=' grid grid-two-column '>
                         <div><input className='username' type='text' id='username' placeholder='username'></input></div>
                         <div><input className='email' type='email' id='email' placeholder='Your Email'></input></div>
                     </div>

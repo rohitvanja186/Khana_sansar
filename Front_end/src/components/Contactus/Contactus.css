@@ -21,9 +21,9 @@
 .contacts input,
 .contacts textarea{
    padding: 1rem;
-border-radius:5px;
+border-radius:10px;
 font-size: 1.2rem;
-font-family: "work sans";
+font-family: "arial";
 min-width:100%;
 resize: none;
 border: 1.5px solid #858383;
@@ -68,7 +68,7 @@ text-transform: capitalize;
       font-weight: 300;
 }
 
-.icons{
+/* .icons{
     margin-left: -2.8rem;
    
 }
@@ -76,7 +76,7 @@ text-transform: capitalize;
 .icons li{
     display: flex;
     gap: 1.5rem;
-}
+} */
 
 
 
@@ -96,7 +96,7 @@ text-transform: capitalize;
 
 .grid{
     display:grid; 
-    gap: 9rem;
+    gap: 2rem;
   
   }
   
@@ -115,12 +115,25 @@ text-transform: capitalize;
     color: #fff;
     border: none;
     border-radius: 10px;
-    width: 90%;
+    width: 70%;
     background:  #333;
     display: block;
     margin: 0 auto;
-  }
+    cursor: pointer;
 
+  }
+.btn2:hover{
+  background: #65719c;
+  
+}
   .contacts{
 
-  }
+  } */
+
+
+
+
+
+
+
+  /* Contactus.css

@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/donate" element={<Donateform />} />
           <Route path="/services" element={<Services />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/edit" element={<Editdetail />} />
+          <Route path="/edit/:id" element={<Editdetail />} />
           <Route path="/contact" element={<Contactus />} />
         </Routes>
       </div>
