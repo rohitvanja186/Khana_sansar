@@ -1,0 +1,39 @@
+.home {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.home h2 {
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.txt {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        width: fit-content;
+        padding: 5px 10px;
+        background-color: rgb(34, 120, 34);
+        outline: none;
+        border: none;
+        color: #efefef;
+        padding: 9px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        /* Ensure button takes only necessary space */
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+        
+    }
+    button:hover {
+        background-color: darkgreen;
+    }
+}

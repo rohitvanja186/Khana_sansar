@@ -1,11 +1,26 @@
 import React from 'react'
+import './Introduction.css'
+import { Link } from 'react-router-dom';
+import bg from '../../img/bg.jpg'
 
 const Introduction = () => {
   return (
 
 
     <>
-    <p>this isintroduction page which you have to make again</p>
+
+      <div className='home'>
+        <div className='txt'>
+          <h2>Join Us in Fighting Hunger!</h2>
+          <Link to="/login">
+            <button>Donate Now</button>
+          </Link>
+
+
+        </div>
+        <img src={bg} className='' alt='' />
+      </div>
+
     </>
 
   )
